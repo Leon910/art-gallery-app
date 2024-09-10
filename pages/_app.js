@@ -1,7 +1,6 @@
 import useSWR from "swr";
 import GlobalStyle from "../styles";
 import Layout from "@/components/Layout/Layout";
-import useLocalStorageState from "use-local-storage-state";
 
 const URL = "https://example-apis.vercel.app/api/art";
 
@@ -20,10 +19,6 @@ async function fetcher(url) {
 
 export default function App({ Component, pageProps }) {
   const { data, isLoading, error } = useSWR(URL, fetcher);
-  const [artPiecesInfo, setArtPiecesInfo] = useLocalStorageState(
-    "art-pieces-info",
-    { defaultValue: [] }
-  );
 
   if (isLoading) {
     return <h1>Loading...</h1>;
