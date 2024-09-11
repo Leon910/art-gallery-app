@@ -6,13 +6,18 @@ export default function ArtPiecePage({
   artPiecesInfo,
   onToggleFavorite,
 }) {
+  const [artPiece, setArtPiece] = useState(null);
   const router = useRouter();
   const { slug } = router.query;
-  const [artPiece, setArtPiece] = useState(null);
 
   useEffect(() => {
     setArtPiece(pieces.find((piece) => piece.slug === slug));
   }, [setArtPiece, pieces, slug]);
+
+  if (!artPiece) {
+    // Optionally render a loading state or nothing while artPiece is null
+    return <p>Loading...</p>;
+  }
 
   return (
     <ArtPieceDetails
