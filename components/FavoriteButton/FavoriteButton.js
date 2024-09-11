@@ -6,6 +6,7 @@ const StyledButton = styled.button`
   z-index: 10;
   top: 10px;
   right: 10px;
+  background-color: ${(props) => (props.$isFavorite ? "lightcoral" : "white")};
 `;
 
 export default function FavoriteButton({ isFavorite, onToggleFavorite }) {
@@ -13,6 +14,7 @@ export default function FavoriteButton({ isFavorite, onToggleFavorite }) {
     <StyledButton
       onClick={onToggleFavorite}
       aria-label={isFavorite ? "Unfavorite" : "Favorite"}
+      $isFavorite={isFavorite}
     >
       <Image
         src="/images/heart.svg"

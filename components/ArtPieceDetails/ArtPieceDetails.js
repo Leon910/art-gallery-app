@@ -1,13 +1,27 @@
 import ArtPiecePreview from "../ArtPiecePreview/ArtPiecePreview";
 import Link from "next/link";
 import styled from "styled-components";
+import FavoriteButton from "../FavoriteButton/FavoriteButton";
 
-export default function ArtPieceDetails({ image, title, artist, year, genre }) {
+export default function ArtPieceDetails({
+  image,
+  title,
+  artist,
+  year,
+  genre,
+  isFavorite,
+  onToggleFavorite,
+}) {
   return (
     <>
       <StyledLink href="/art-pieces">
         <StyledButton>Go to Gallery</StyledButton>
       </StyledLink>
+
+      <FavoriteButton
+        isFavorite={isFavorite}
+        onToggleFavorite={onToggleFavorite}
+      />
       <ArtPiecePreview
         image={image}
         title={title}
