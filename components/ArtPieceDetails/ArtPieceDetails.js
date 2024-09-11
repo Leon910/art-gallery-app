@@ -18,16 +18,16 @@ export default function ArtPieceDetails({
         <StyledButton>Go to Gallery</StyledButton>
       </StyledLink>
 
-      <FavoriteButton
-        isFavorite={isFavorite}
-        onToggleFavorite={onToggleFavorite}
-      />
       <ArtPiecePreview
         image={image}
         title={title}
         artist={artist}
         height={288}
         width={288}
+      />
+      <FavoriteButton
+        isFavorite={isFavorite}
+        onToggleFavorite={onToggleFavorite}
       />
       <StyledDescription>
         <p>
