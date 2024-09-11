@@ -53,7 +53,12 @@ export default function App({ Component, pageProps }) {
     <>
       <GlobalStyle />
       <Layout>
-        <Component {...pageProps} data={data} />
+        <Component
+          {...pageProps}
+          pieces={data}
+          artPiecesInfo={artPiecesInfo}
+          onToggleFavorite={handleToggleFavorite}
+        />
       </Layout>
     </>
   );
